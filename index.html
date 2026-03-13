@@ -1,65 +1,36 @@
 <!DOCTYPE html>
 <html>
+
 <head>
-<title>Smart Timetable Generator</title>
+
+<title>School Timetable Generator</title>
+<link href="style.css" rel="stylesheet">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Plus+Jakarta+Sans:ital,wght@0,200..800;1,200..800&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="style.css">
-
+<link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Plus+Jakarta+Sans:ital,wght@0,200..800;1,200..800&display=swap" rel="stylesheet">
 </head>
 
 <body>
 
-<h2 class="main-header">📚 Smart Timetable Generator</h2>
+<h2>📚 School Timetable Generator</h2>
 
-<div class="container">
+<p>Enter First Period Start Time</p>
 
-<p>Enter subjects separated by commas</p>
+<input type="time" id="startTime">
 
-<input id="subjects" placeholder="Math, English, Physics" style="width:90%;padding:10px">
+<br>
+
+<button onclick="generate()">Generate Timetable</button>
 
 <br><br>
 
-<button onclick="generate()">Generate</button>
-
-<div id="table"></div>
-
+<div class="timetable-container">
+  <div id="timetable"></div>
 </div>
 
-<script>
-
-function generate(){
-
-let subjects=document.getElementById("subjects").value.split(",")
-
-let days=["Mon","Tue","Wed","Thu","Fri"]
-
-let table="<table><tr><th>Day</th><th>P1</th><th>P2</th><th>P3</th><th>P4</th></tr>"
-
-for(let d=0; d<days.length; d++){
-
-table+="<tr><td>"+days[d]+"</td>"
-
-for(let p=0; p<4; p++){
-
-let random=subjects[Math.floor(Math.random()*subjects.length)]
-
-table+="<td>"+random+"</td>"
-
-}
-
-table+="</tr>"
-
-}
-
-table+="</table>"
-
-document.getElementById("table").innerHTML=table
-
-}
-
+<script src="app.js">
 </script>
 
 </body>
+
 </html>
