@@ -41,6 +41,10 @@ input[type="time"] {
   padding: 10px 16px;
   border-radius: 50px; /* Pill shape */
   outline: none;
+    font-family: "Montserrat", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 700;
+  font-style: normal;
 }
 
 button {
@@ -52,7 +56,11 @@ button {
   cursor: pointer;
   font-weight: 600;
   transition: transform 0.2s, background 0.2s;
-  margin-top:20px
+  margin-top:20px;
+    font-family: "Montserrat", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 700;
+  font-style: normal;
 }
 
 button:hover {
